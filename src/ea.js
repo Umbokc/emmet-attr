@@ -1,4 +1,4 @@
-/*! ea.js v1| MIT License | github.com/umbokc/emmet-attr */
+/*! ea.js v1.1| MIT License | github.com/umbokc/emmet-attr */
 
 document.addEventListener('DOMContentLoaded', function(){
 	var nodeList = document.getElementsByTagName('*');
@@ -60,4 +60,52 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		actualSpan = xPathRes.iterateNext ()
 	}
+
+	var wraps = document.querySelectorAll('[ea-tabs]');
+
+	wraps.forEach(function(wrap){
+		var name_tabs = wrap.getAttribute('ea-tabs');
+		var tabs = wrap.querySelectorAll('[tab-name=' + name_tabs + ']');
+		var tab_active = wrap.querySelector('[tab-active]');
+		var contents = {};
+		var i = 0;
+
+		tabs.forEach(function(elem){
+			attr = elem.getAttribute('tab-to');
+			item = wrap.querySelector(attr);
+
+			if(tab_active == undefined){
+				if(i != 0){
+					item.style.display = 'none';
+					item.style.visibility = 'hidden';
+				}
+			} else {
+				if (!elem.hasAttribute('tab-active')){
+					item.style.display = 'none';
+					item.style.visibility = 'hidden';
+				}
+			}
+
+			contents[attr] = item;
+			i++;
+		});
+
+		tabs.forEach(function(elem){
+			elem.onclick = function(e){
+				e.preventDefault();
+				attr = this.getAttribute('tab-to');
+				contents[attr].style.display = 'block';
+				contents[attr].style.visibility = 'visible';
+				for (key in contents) {
+					if (contents.hasOwnProperty(key)) {
+						if(key != attr){
+							contents[key].style.display = 'none';
+							contents[key].style.visibility = 'hidden';
+						}
+					}
+				}
+			};
+		});
+	});
+
 });
