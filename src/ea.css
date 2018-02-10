@@ -173,3 +173,7 @@
 [ea] [h\:100vh] {height:100vh}
 [ea] [w\:100p] {width:100%}
 [ea] [h\:100p] {height:100%}
+
+[ea] [ol\:n] {outline:none}
+
+[ea] [no-click] {pointer-events:none}
