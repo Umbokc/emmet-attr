@@ -1,5 +1,5 @@
 # emmet attr
-#####.htaccess
+.htaccess
 ```
 <IfModule mod_rewrite.c>
     RewriteEngine On
