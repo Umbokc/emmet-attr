@@ -1,0 +1,62 @@
+support-for-ie ?= true
+
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -ms-{prop} args
+  -o-{prop} args
+  {prop} args
+
+border-radius()
+  vendor('border-radius', arguments)
+
+transition()
+  vendor('transition', arguments)
+
+box-shadow()
+  vendor('box-shadow', arguments)
+
+box-sizing()
+  vendor('box-sizing', arguments)
+
+background-size()
+  vendor('background-size', arguments)
+
+flex-basis()
+  vendor('flex-basis', arguments)
+
+// flex-grow()
+  // vendor('flex-grow', arguments)
+
+// flex-wrap()
+  // vendor('flex-wrap', arguments)
+
+hyphens()
+  vendor('hyphens', arguments)
+
+bg-linear-gradient($c1, $c2)
+  background -webkit-linear-gradient($c1, $c2)
+  background -o-linear-gradient($c1, $c2)
+  background linear-gradient($c1, $c2)
+
+opacity(n)
+  opacity n
+  if support-for-ie
+    filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')')
+
+placeholder_color(arguments)
+  &::-webkit-input-placeholder
+    color arguments
+  &::-moz-placeholder
+    color arguments
+  &:-moz-placeholder
+    color arguments
+  &:-ms-input-placeholder
+    color arguments
+
+font_face(name, style, weight, path)
+  @font-face
+    font-family name
+    font-style style
+    font-weight weight
+    src: url(path + ".eot?#iefix") format("embedded-opentype"), url(path + ".woff") format("woff"), url(path + ".ttf") format("truetype");

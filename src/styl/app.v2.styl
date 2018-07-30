@@ -1,0 +1,62 @@
+
+add_css(attr, css)
+	if type(attr) == 'string'
+		{attr}
+			for x,y in css
+				{x} y
+	else
+		new_attr = ''
+		for k,a in attr
+			new_attr += a + ', '
+		add_css(new_attr, css) 
+
+format_attr(a, all_func = true)
+	attr_s = ''
+	attr_s += '['+a+'],'
+	if all_func == true
+		attr_s += '['+a+'\@hov' + ']:hover,'
+	return attr_s
+ 
+
+format_style(a, all_func = true)
+	attr_s = ''
+	attr_s += "[ea-s~='"+a+"'],"
+	if all_func == true
+		// attr_s += "[ea-s\:hov~='"+a+"']:hover,"
+		attr_s += "[ea-s\:chs~='"+a+"'] *,"
+		attr_s += "[ea-s\:ch~='"+a+"'] > *,"
+		attr_s += "[ea-s\:ch-2~='"+a+"'] > * > *,"
+		attr_s += ""
+	return attr_s
+
+ 
+add_style_attr(t_attr, css, all_func = true)
+	attr_s = ''
+	if type(t_attr) == 'string'
+		a = t_attr
+		attr_s = format_attr(a, all_func)
+	else
+		for k,a in t_attr
+			attr_s += format_attr(a, all_func)
+			
+	add_css(attr_s, css) 
+
+	
+add_style(t_attr, css, all_func = true)
+	attr_s = ''
+	if type(t_attr) == 'string'
+		a = t_attr
+		attr_s = format_style(a, all_func)
+	else
+		for k,a in t_attr
+			attr_s += format_style(a, all_func)
+			
+	add_css(attr_s, css)
+
+add_styles(s, prop, css)
+	for k, v in css
+		new_css = {}
+		new_css[prop] = v
+		add_style(s + k, new_css)
+
+@import "ea.v2.0.styl"

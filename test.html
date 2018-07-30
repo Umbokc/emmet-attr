@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ea>
 <head>
 	<meta charset="UTF-8">
 	<title>U emmet attr example</title>
@@ -9,83 +9,75 @@
 
 	<style>
 		[col] { min-height: 25px; -webkit-border-radius: 8px; border-radius: 8px; border: 1px solid #677DCC; text-align: center; line-height: 25px; font-size: 1em; box-sizing: border-box;}
-		[row], row {padding: 13px 0;}
+		[row] {padding: 13px 0;}
+		.active{background: green;}
+		.active2{color: aqua;}
 	</style>
 
 </head>
-<body ea>
+<body>
 
-	<div w=300px h-a bgc#0 m-a>
-		<p d:b c#f ta:c>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, magni consectetur! Quasi facilis et quae molestiae, consectetur ex sit corrupti nam minima vitae, est beatae quos recusandae labore laborum quia.</p>
+
+	<p id="item" ea-s='p:x m:t' class="item active active2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam minima perferendis asperiores molestias veritatis pariatur magni dicta ipsam. Enim esse est, distinctio. Dolorem iste beatae fuga minus nesciunt explicabo maiores.</p>
+
+	<div
+		ea-s='bgc#0 m:a'
+		ea-j='w=300px h=100px bd=6px:solid:paleturquoise'
+		ea-j:hov='w=400px bds=green'>
+		<p ea-s='d:b c#f ta:c'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, magni consectetur!</p>
 	</div>
 
-	<div w=900px m-a>
-		<div row>
-			<div col=twelve>twelve</div>
-		</div>
-		<div row>
-			<div col=eleven>eleven</div>
-			<div col=one>one</div>
-		</div>
-		<div row>
-			<div col=ten>ten</div>
-			<div col=two>two</div>
-		</div>
-		<div row>
-			<div col=nine>nine</div>
-			<div col=three>three</div>
-		</div>
-		<div row>
-			<div col=eight>eight</div>
-			<div col=four>four</div>
-		</div>
-		<div row>
-			<div col=seven>seven</div>
-			<div col=three>three</div>
-			<div col=two>two</div>
-		</div>
-		<row>
-			<div col=seven>seven</div>
-			<div col=five>five</div>
-		</row>
-		<row>
-			<div col=three>three</div>
-			<div col=three>three</div>
-			<div col=three>three</div>
-			<div col=three>three</div>
-		</row>
-		<row>
-			<div col=two>two</div>
-			<div col=two>two</div>
-			<div col=two>two</div>
-			<div col=two>two</div>
-			<div col=two>two</div>
-			<div col=two>two</div>
-		</row>
-		<row>
-			<div col=one>one</div>
-			<div col=one>one</div>
-			<div col=one>one</div>
-			<div col=one>one</div>
-			<div col=one>one</div>
-			<div col=one>one</div>
-			<div col=one>one</div>
-			<div col=one>one</div>
-			<div col=one>one</div>
-			<div col=one>one</div>
-			<div col=one>one</div>
-			<div col=one>one</div>
-		</row>
-		<row>
-			<div col>col</div>
-			<div col=six>six</div>
-			<div col>col</div>
-		</row>
-		<row>
-			<div col>col</div>
-			<div col=five>five</div>
-			<div col>col</div>
-		</row>
+	<div
+		ea-s='bgc#3 m:t:big m:x:a'
+		ea-j='w=600px h=100px bd=6px:solid:paleturquoise '
+		ea-j:hov='w=400px bd=6px:solid:green pt=10px '>
+		<p ea-s='d:b c#f ta:c' ea-j:hov='bgc=aqua c=#000'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, magni consectetur!</p>
+	</div>
+
+	<div togl-cl=".item|active data data1" ea-s='cur:p bgc#d w:10p p:big ta:c'>
+		click
+	</div>
+
+	<div>
+
+		<ul ea-s='' ea-s:ch='d:ib p bgc#e td:n' ea-s:ch-2='td:n'>
+			<li tab-item='tab-1|.item-tab'><a href="#">Menu 1</a></li>
+			<li tab-item='tab-1|.item-tab2|active'><a href="#">Menu 2</a></li>
+			<li tab-item='tab-1|.item-tab3'><a href="#">Menu 3</a></li>
+		</ul>
+
+		<ul ea-s:ch-2='c#4'>
+			<li class="item-tab">
+				<p togl-cl='body|body asd'>1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est voluptate asperiores suscipit dolorem, recusandae officia nihil ab distinctio enim aliquid dolorum libero cum autem maiores molestias repellendus! Dignissimos, velit architecto.</p>
+			</li>
+			<li class="item-tab2">
+				<p>2 Rerum et suscipit architecto pariatur, quos, ut atque molestias aperiam ratione eum non temporibus illum aliquam? Nulla magni fuga aliquam dolorem, maiores nobis laborum ex voluptatibus cupiditate minus, ut eveniet.</p>
+			</li>
+			<li class="item-tab3">
+				<p>3 Repellendus dolores optio unde, beatae officia officiis voluptate! Excepturi error earum, illo qui suscipit commodi aspernatur veniam maxime nesciunt animi, ipsa ex eveniet dicta dolores autem vero pariatur! Recusandae, laudantium!</p>
+			</li>
+		</ul>
+	</div>
+
+	<div>
+
+		<ul ea-s='' ea-s:ch='d:ib p bgc#e td:n' ea-s:ch-2='td:n'>
+			<li tab-item='tab-2|.item-tab-2'><a href="#">Menu 1</a></li>
+			<li tab-item='tab-2|.item-tab2-2'><a href="#">Menu 2</a></li>
+			<li tab-item='tab-2|.item-tab3-2|active'><a href="#">Menu 3</a></li>
+		</ul>
+
+		<ul ea-s:ch-2='c#4'>
+			<li class="item-tab-2">
+				<p togl-cl='body|body asd'>1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est voluptate asperiores suscipit dolorem, recusandae officia nihil ab distinctio enim aliquid dolorum libero cum autem maiores molestias repellendus! Dignissimos, velit architecto.</p>
+			</li>
+			<li class="item-tab2-2">
+				<p>2 Rerum et suscipit architecto pariatur, quos, ut atque molestias aperiam ratione eum non temporibus illum aliquam? Nulla magni fuga aliquam dolorem, maiores nobis laborum ex voluptatibus cupiditate minus, ut eveniet.</p>
+			</li>
+			<li class="item-tab3-2">
+				<p>3 Repellendus dolores optio unde, beatae officia officiis voluptate! Excepturi error earum, illo qui suscipit commodi aspernatur veniam maxime nesciunt animi, ipsa ex eveniet dicta dolores autem vero pariatur! Recusandae, laudantium!</p>
+			</li>
+		</ul>
 	</div>
 
 </body>
